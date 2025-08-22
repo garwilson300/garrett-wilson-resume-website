@@ -179,13 +179,14 @@ document.head.appendChild(style);
 
 // Typing Effect for Hero Title (optional enhancement)
 const heroTitle = document.querySelector('.hero-title');
-const text = heroTitle.innerHTML;
-heroTitle.innerHTML = '';
+const heroName = heroTitle.querySelector('.accent');
+const nameText = heroName.textContent;
+heroName.textContent = '';
 
 let i = 0;
 function typeWriter() {
-    if (i < text.length) {
-        heroTitle.innerHTML = text.substring(0, i + 1);
+    if (i < nameText.length) {
+        heroName.textContent = nameText.substring(0, i + 1);
         i++;
         setTimeout(typeWriter, 50);
     }
